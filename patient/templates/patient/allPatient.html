@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Gender</th>
+            <th scope="col">His Doctor</th>
+            <th scope="col">Money on it</th>
+            <th scope="col">Done</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for patient in patients %}
+        <tr>
+            <th scope="row">{{ patient.name }}</th>
+
+
+            {% if patient.age %}
+                <th scope="row">{{ patient.age }}</th>
+            {% else %}
+                <th scope="row">not available</th>
+            {% endif %}
+
+            {% if patient.phoneNumber %}
+                <th scope="row">{{ patient.phoneNumber }}</th>
+            {% else %}
+                <th scope="row">not available</th>
+            {% endif %}
+
+            <th scope="row">{{ patient.gender }}</th>
+
+            {% if patient.patientDoctorName %}
+                <th scope="row">{{ patient.patientDoctorName }}</th>
+            {% else %}
+                <th scope="row">not available</th>
+            {% endif %}
+
+
+            <th scope="row">{{ patient.totalCost }}</th>
+            <th scope="row">{{ patient.done }}</th>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}
