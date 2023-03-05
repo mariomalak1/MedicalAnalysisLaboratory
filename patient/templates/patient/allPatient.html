@@ -8,6 +8,7 @@
             <th scope="col">Age</th>
             <th scope="col">Phone No.</th>
             <th scope="col">Gender</th>
+            <th scope="col">Time Added</th>
             <th scope="col">His Doctor</th>
             <th scope="col">Money on it</th>
             <th scope="col">Done</th>
@@ -32,6 +33,8 @@
             {% endif %}
 
             <th scope="row">{{ patient.gender }}</th>
+
+            <th scope="row">{{ patient.dateTime }}</th>
 
             {% if patient.patientDoctorName %}
                 <th scope="row">{{ patient.patientDoctorName }}</th>
